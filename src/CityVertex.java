@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 public class CityVertex {
-    public LinkedList<CityVertex> toCities;
+    public LinkedList<CityVertex> toCities; // Edges that would be outgoing from this node =>
     public String name;
 
     public CityVertex(String nm) {
