@@ -11,6 +11,5 @@ public class CityVertexTest {
         CityVertex pvd = new CityVertex("Providence");
         CityVertex wos = new CityVertex("Worcester");
         CityVertex har = new CityVertex("Hartford");
-
     }
 }
