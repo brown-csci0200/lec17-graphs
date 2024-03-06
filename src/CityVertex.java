@@ -13,19 +13,6 @@ public class CityVertex {
         this.toCities.add(toVertex);
     }
 
-    public boolean canReach(CityVertex dest) {
-        if (this == dest) {
-            return true;
-        }
-
-        for (CityVertex neighbor : this.toCities) {
-            if (neighbor.canReach(dest)) {
-                return true; // We can reach neighbor, we can reach dest
-            }
-        }
-        return false;
-    }
-
     public String toString() {
         String retstring = "City " + this.name + " goes to { ";
         for (CityVertex toCity : this.toCities) {
