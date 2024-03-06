@@ -9,7 +9,14 @@ public class CityVertexTest {
         CityVertex man = new CityVertex("Manchester");
         CityVertex bos = new CityVertex("Boston");
         CityVertex pvd = new CityVertex("Providence");
-        CityVertex wos = new CityVertex("Worcester");
+        CityVertex wor = new CityVertex("Worcester");
         CityVertex har = new CityVertex("Hartford");
+
+        man.addEdge(bos);
+        bos.addEdge(pvd);
+        bos.addEdge(wor);
+        pvd.addEdge(bos);
+        wor.addEdge(har);
+
     }
 }
