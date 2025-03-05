@@ -18,5 +18,9 @@ public class CityVertexTest {
         pvd.addEdge(bos);
         wor.addEdge(har);
 
+        // Can city A get to city B?
+        Assert.assertTrue(man.canReach(har));
+        Assert.assertFalse(har.canReach(pvd));
+
     }
 }
