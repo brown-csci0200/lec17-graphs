@@ -21,4 +21,14 @@ public class CityVertex {
         retstring += "}";
         return retstring;
     }
+
+    public boolean canReach(CityVertex other){
+        // Base case
+        if(this.equals(other)) return true;
+        // Recursive cases... ... ... one for each possible mid-point
+        for(CityVertex toCity : this.toCities) {
+            if(toCity.canReach(other)) return true;
+        }
+        return false;
+    }
 }
