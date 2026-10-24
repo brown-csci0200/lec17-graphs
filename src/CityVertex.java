@@ -1,4 +1,6 @@
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class CityVertex {
     public LinkedList<CityVertex> toCities;
@@ -22,12 +24,19 @@ public class CityVertex {
         return retstring;
     }
 
-    public boolean canReach(CityVertex other){
+    public boolean canReach(CityVertex other) {
+        return canReachHelper(other, new HashSet<>());
+    }
+
+    private boolean canReachHelper(CityVertex other, Set<CityVertex> visited) {
         // Base case
         if(this.equals(other)) return true;
         // Recursive cases... ... ... one for each possible mid-point
         for(CityVertex toCity : this.toCities) {
-            if(toCity.canReach(other)) return true;
+            if(!visited.contains(toCity)) {
+                visited.add(toCity);
+                if(toCity.canReachHelper(other, visited)) return true;
+            }
         }
         return false;
     }
